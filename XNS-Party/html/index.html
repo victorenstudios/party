@@ -1,0 +1,428 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="alert-bg">
+            <div class="alert-text"><span id="eventtext"></span></div>
+        </div>
+        <div class="alerttime-bg">
+            <div class="eventalert-text">
+                Time left to join
+            </div>
+            <div class="eventalert-text2">
+                <span id="alerttime">00:00</span>
+            </div>
+        </div>
+        <div class="eventalert-bg">
+            <div class="eventalert-text">
+                Still unable to open
+            </div>
+            <div class="eventalert-text2">
+                Time Left <span id="airdroptime">00:00</span> Minutes
+            </div>
+        </div>
+        <div class="eventalert-bg2">
+            <div class="eventalert-text3">
+                Event not open
+            </div>
+            <div class="eventalert-text4">
+                Time Left <span id="flagtime">00:00</span> Minutes
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                </div>
+                <div class="body-bg">
+                    <div class="event-zone" onclick="EventMenu()">
+                        <div class="all-zone-text">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            &nbsp;EVENT ZONE
+                        </div>
+                        <div class="all-info-zone-text">
+                            <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            &nbsp;Join Events and have fun with your friends! 
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="family-zone" onclick="FamilyMenu()">
+                        <div class="all-zone-text">
+                            <i class="fa-solid fa-house-signal"></i>
+                            &nbsp;FAMILY
+                        </div>
+                        <div class="all-info-zone-text">
+                            <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            &nbsp; Create Family
+                         </div>
+                     </div>
+                     <div class="squad-zone" onclick="SquadMenu()">
+                         <div class="all-zone-text">
+                             <i class="fa-solid fa-user-group"></i>
+                             &nbsp; PARTY
+                         </div>
+                         <div class="all-info-zone-text">
+                             <i class="fa-sharp fa-solid fa-circle-info"></i>
+                             &nbsp; Create Party
+                        </div>
+                    </div>
+                    <div class="daily-zone">
+                        <div class="all-zone-text">
+                            <i class="fa-sharp fa-solid fa-clipboard-question"></i>
+                            &nbsp;DAILY QUEST
+                        </div>
+                        <div class="all-info-zone-text">
+                            <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            &nbsp; Daily Quest
+                        </div>
+                    </div>
+                    <div class="shop-zone" onclick="ShopMenu()">
+                        <div class="all-zone-text">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            &nbsp;SHOP
+                        </div>
+                        <div class="all-info-zone-text">
+                            <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            &nbsp; GC STORE
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="battlepass-zone">
+                        <div class="battlepass-zone-text">
+                            <i class="fa-sharp fa-solid fa-ticket"></i>
+                            &nbsp;BATTLE PASS
+                        </div>
+                        <div class="all-info-zone-text">
+                            <i class="fa-sharp fa-solid fa-circle-info"></i>
+                            &nbsp; Collect EXP to unlock slots.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="exit-event-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseEventMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-bg">
+                    <div class="exit-event" onclick="ExitEvent()">
+                        Press to quit the event.
+                    </div>
+                </div>
+            </div>
+            <div class="event-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseEventMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-bg">
+                    <div class="airdrop-zone" onclick="AirdropMenu()">
+                        <div class="airdrop-zone-text">
+                            <i class="fa-solid fa-parachute-box"></i>
+                            &nbsp;AIRDROP
+                        </div>
+                    </div>
+                    <div class="flag-zone" onclick="FlagMenu()">
+                        <div class="flag-zone-text">
+                            <i class="fa-solid fa-flag"></i>
+                            &nbsp;FLAG
+                        </div>
+                    </div>
+                    <div class="warzone-zone" onclick="WarzoneMenu()">
+                        <div class="warzone-zone-text">
+                            <i class="fa-solid fa-skull"></i>
+                            &nbsp;WARZONE
+                        </div>
+                    </div>
+                    <div class="ranking-zone">
+                        <div class="ranking-zone-text">
+                            <i class="fa-solid fa-trophy"></i>
+                            &nbsp;RANKING
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="squad-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseSquadMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                    <div class="searchsquad">
+                        <input type="text" id="myInput2" onkeyup="myFunction2()" placeholder="• Party Search">
+                    </div>
+                </div>
+                <div class="body-bg">
+                    <div class="squadlist">
+                        <div id="squadlist"></div>
+                    </div>
+                    <div class="createsquad">
+                        <div class="createsquadbottom" onclick="CreateSquad()">
+                            Party Building
+                        </div>
+                    </div>
+                    <div class="CreateSquadInput">
+                        <div class="CreateSquadInput-bg">
+                            <input type="text" maxlength="18" class="input-filed" id="SquadName" placeholder="Party Name">
+                            <div class="submit" onclick="CreateParty()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelCreateParty()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mamage-squad-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseSquadMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-bg">
+                    <div class="MemberSquad">
+                        <div id="MemberSquad"></div>
+                    </div>
+                    <div class="ManageSquad">
+                        <div class="ManageSquadName" id="ManageSquadName"></div>
+                        <div id="ManageSquadButton"></div>
+                        <div id="ManageSquadStatus"></div>
+                        <div class="QuitSquad">
+                            <div class="QuitSquad-bg">
+                                <div class ="AlertText2"><i class="fa-solid fa-bell"></i>&nbsp;Are you sure to leave the party?</div>
+                                <div class="submit" onclick="SubmitQuitSquad()">
+                                    <span class="centertext">Submit</span>
+                                </div>
+                                <div class="cancel" onclick="CancelQuitSquad()">
+                                    <span class="centertext">Cancel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="DeleteSquad">
+                            <div class="DeleteSquad-bg">
+                                <div class ="AlertText2"><i class="fa-solid fa-bell"></i>&nbsp;Are you sure to Delete squad?</div>
+                                <div class="submit" onclick="SubmitDeleteSquad()">
+                                    <span class="centertext">Submit</span>
+                                </div>
+                                <div class="cancel" onclick="CancelDeleteSquad()">
+                                    <span class="centertext">Cancel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="airdrop-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseAirdropMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-shop-bg">
+                    <div id="Airdrop"></div>
+                </div>
+            </div>
+            <div class="flag-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseFlagMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-shop-bg">
+                    <div id="Flag"></div>
+                </div>
+            </div>
+            <div class="warzone-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseWarzoneMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                </div>
+                <div class="body-shop-bg">
+                    <div id="Warzone"></div>
+                </div>
+            </div>
+            <div class="family-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseFamilyMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                    <div class="searchfamily">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="• Search Family">
+                    </div>
+                </div>
+                <div class="body-bg">
+                    <div class="gangdetailnoinfo">
+                        <div class="managefamilybottom"></div>
+                    </div>
+                    <div class="gangdetailinfo">
+                        <div id="familydetail"></div>
+                        <div class="managefamilybottom"></div>
+                    </div>
+                    <div class="seemember-bg">
+                        <div class="searchmemberfamily">
+                            <input type="text" id="myInput3" onkeyup="myFunction3()" placeholder="• Find member name">
+                        </div>
+                        <div class="closemenumember" onclick="CloseSeeMemberMenu()">
+                            <i class="fa-solid fa-backward"></i>
+                        </div>
+                        <div class="seemember">
+                            <div id="memberlist"></div>
+                        </div>
+                    </div>
+                    <div class="ganglist">
+                        <div id="familylist"></div>
+                    </div>
+                    <!-- ManageFamily -->
+                    <div class="ManageFamilyBG">
+                        <div class="FamilyInformation">
+                            <div class="ManageHeader">
+                                Family Information
+                            </div>
+                            <div class="ManageBody">
+                                <div class="ManageGangName"></div>
+                                <div class="ManageImgDetail">
+                                    &nbsp;Profile Picture :
+                                </div>
+                                <div class="ManageImgId"></div>
+                                <div class="ManageBioDetail">
+                                    &nbsp;Details :
+                                </div>
+                                <div class="ManageBioId"></div>
+                                <div id="SubmitManageId"></div>
+                            </div>
+                        </div>
+                        <div class="FamilyMember">
+                            <div class="ManageHeader">
+                                Family Member
+                            </div>
+                            <div class="ManageBody">
+                                <div id="ManageMemberBG"></div>
+                            </div>
+                        </div>
+                        <div class="FamilyManage">
+                            <div class="ManageHeader">
+                                Family Manage
+                            </div>
+                            <div class="ManageBody">
+                                <div id="ManageRequestId"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ManageRequestBG">
+                        <div class="FamilyMember">
+                            <div class="ManageHeader">
+                                Request Manage
+                                <div class="CloseRequestBottom" onclick="CloseRequestBottom()">
+                                    <i class="fa-solid fa-x"></i>
+                                </div>
+                            </div>
+                            <div class="ManageBody">
+                                <div id="ManageRequestBG"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="QuitFamily">
+                        <div class="QuitFamily-bg">
+                            <div class ="AlertText2"><i class="fa-solid fa-bell"></i>&nbsp;Do you want to leave your family?</div>
+                            <div class="submit" onclick="SubmitQuitFamily()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelQuitFamily()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="DeleteFamily">
+                        <div class="DeleteFamily-bg">
+                            <div class ="AlertText2"><i class="fa-solid fa-bell"></i>&nbsp;Do you want to delete your family?</div>
+                            <div class="submit" onclick="SubmitDeleteFamily()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelDeleteFamily()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="UpGrageSlot">
+                        <div class="UpGrageSlot-bg">
+                            <div class ="AlertText2"><i class="fa-solid fa-bell"></i>&nbsp;Do you want to upgrade your family?</div>
+                            <div class="submit" onclick="SubmitUpGrageSlot()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelUpGrageSlot()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="UpRank">
+                        <div class="UpRank-bg">
+                            <select class="time" style="font-family: Kanit;" id="all-rank"></select>
+                            <div class="submit" onclick="SubmitUpRank()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelUpRank()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="CreateFamily">
+                    <div class="CreateFamily-bg">
+                        <div class ="AlertText"><i class="fa-solid fa-bell"></i>&nbsp;Must have money&nbsp;<span id="moneycreatefamily">50,000</span></div>
+                        <input type="text" maxlength="18" class="input-filed" id="FamilyName" placeholder="Family Name">
+                        <div class="submit" onclick="CreateFamily()">
+                            <span class="centertext">Submit</span>
+                        </div>
+                        <div class="cancel" onclick="CancelCreateFamily()">
+                            <span class="centertext">Cancel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-bg">
+                <div class="header-bg">
+                    <div class="Profile"></div>
+                    <div class="closemenu" onclick="CloseShopMenu()">
+                        <i class="fa-solid fa-backward"></i>
+                    </div>
+                    <div class="gcmenu">
+                        <span id="gccount">0</span>&nbsp;<span class="gc">GC</span>
+                    </div>
+                </div>
+                <div class="body-shop-bg">
+                    <div id="item-shop"></div>
+                    <div class="InputItemCount">
+                        <div class="InputItemCount-bg">
+                            <input type="number" maxlength="18" class="input-filed" id="InputItemCount" placeholder="Quantity">
+                            <div class="submit" onclick="SubmitBuyItem()">
+                                <span class="centertext">Submit</span>
+                            </div>
+                            <div class="cancel" onclick="CancelBuyItem()">
+                                <span class="centertext">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+    <script src="./js/script.js" type="text/javascript"></script>
+</html>
